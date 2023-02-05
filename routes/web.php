@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +19,12 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
+Route::controller(AdminController::class)
+    ->middleware('auth')
+    ->prefix('desk')
+    ->group(function () {
+        Route::get('/', 'desk')->name('desk');
+    });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
