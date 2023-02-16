@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SettingsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,16 @@ Route::controller(AdminController::class)
     ->prefix('desk')
     ->group(function () {
         Route::get('/', 'desk')->name('desk');
+    Route::controller(SettingsController::class)->prefix('settings')->name('settings.')->group(function () {
+        Route::get('/', 'main')->name('main');
+        Route::get('/info', 'info')->name('info');
+        Route::post('/updateInfo', 'updateInfo')->name('updateInfo');
+        Route::get('/logo', 'logo')->name('logo');
+        Route::post('/updateLogo', 'updateLogo')->name('updateLogo');
+        Route::get('/editImages', 'editImages')->name('editImages');
+        Route::post('storeImages', 'storeImages')->name('storeImages');
+        Route::get('/destroyImage/{quizImage}', 'destroyImage')->name('destroyImage');
+    });
     });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

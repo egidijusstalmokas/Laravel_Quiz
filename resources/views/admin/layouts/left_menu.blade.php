@@ -6,7 +6,7 @@
       <div class="list-group list-group-flush">
         <a href="/desk" class="list-group-item waves-effect">
           <i class="fa fa-pie-char mr-3"></i>Dashboard</a>
-        <a href="" class="list-group-item list-group-item-action waves-effect">
+        <a href="{{ route('settings.main') }}" class="list-group-item list-group-item-action waves-effect">
           <i class="fa fa-money mr-3"></i>Settings</a> 
       </div>
 
