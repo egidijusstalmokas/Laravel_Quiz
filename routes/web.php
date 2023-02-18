@@ -41,6 +41,8 @@ Route::controller(AdminController::class)
         Route::get('/', 'index')->name('index');
         Route::get('/create', 'create')->name('create');
         Route::post('/store', 'store')->name('store');
+        Route::get('edit/{question}', 'edit')->name('edit');
+        Route::post('update/{question}', 'update')->name('update');
     });
     });
 

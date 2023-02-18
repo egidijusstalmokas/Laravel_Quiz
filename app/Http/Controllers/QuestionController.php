@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use App\Models\Answer;
+use Illuminate\Support\Facades\File; 
 
 class QuestionController extends Controller
 {
@@ -95,7 +96,7 @@ class QuestionController extends Controller
             
             return redirect()->back()->with('success', $message);
         }else {
-            $message = "Pateikti duomenys neteisingi, patikrinkikte ir pabandykite iš naujo.";
+            $message = "An error occurred, please try again later.";
             return redirect()->back()->with('error', $message); 
         }
     }
@@ -119,7 +120,7 @@ class QuestionController extends Controller
      */
     public function edit(Question $question)
     {
-        //
+        return view('admin.quiz.edit', compact('question'));
     }
 
     /**
@@ -131,7 +132,65 @@ class QuestionController extends Controller
      */
     public function update(Request $request, Question $question)
     {
-        //
+        $message = "Question updated successfully";
+        $validator = Validator::make($request->all(), [ 
+            'text' => 'required|string',
+            'image' => 'mimes:jpeg,png,jpg,gif,svg,webp',
+            'answer_a' => 'string',
+            'answer_b' => 'string',
+            'answer_c' => 'string',
+            'correct_answer' => 'string',
+        ]);
+
+        $messages = $validator->errors();
+        if($messages->isEmpty()){
+            $question->text = $request->text;
+            if($request->has('image')){
+                File::delete(public_path('/quiz/' . $question->image));
+                $imageName = time().'.'.$request->image->extension();  
+                $request->image->move('quiz/', $imageName);
+                $question->image = $imageName;
+            }
+            $question->save();
+
+            // Answer A
+            $answerA = $question->answer[0];
+            $answerA->text = $request->answer_a;
+            if($request->correct_answer == 'A'){
+                $answerA->value = true;
+            }else{
+                $answerA->value = false;
+            }
+            $answerA->question_id = $question->id;
+            $answerA->save();
+
+            // Answer B
+            $answerB = $question->answer[1];
+            $answerB->text = $request->answer_b;
+            if($request->correct_answer == 'B'){
+                $answerB->value = true;
+            }else{
+                $answerB->value = false;
+            }
+            $answerB->question_id = $question->id;
+            $answerB->save();
+
+            // Answer C
+            $answerC = $question->answer[2];
+            $answerC->text = $request->answer_c;
+            if($request->correct_answer == 'C'){
+                $answerC->value = true;
+            }else{
+                $answerC->value = false;
+            }
+            $answerC->question_id = $question->id;
+            $answerC->save();
+            
+            return redirect()->back()->with('success', $message);
+        }else {
+            $message = "An error occurred, please try again later.";
+            return redirect()->back()->with('error', $message); 
+        }
     }
 
     /**
