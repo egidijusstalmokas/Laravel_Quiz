@@ -25,7 +25,15 @@
                                         <th class="font-weight-bold" scope="col">Actions</th>
                                     </tr>
                                 </thead> 
-                                <tbody> 
+                                <tbody>
+                                    @foreach($questions as $question)
+                                    <tr>
+                                        <th scope="row"><a href="">{{ $loop->iteration }}</a></th>
+                                        <td><a href="">{{ $question->text }}</a></td>
+                                        <td><a href="">{{ $question->answer->count() }}</a></td>
+                                        <td><a href="{{ route('question.edit', $question) }}">Edit</a></td>
+                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

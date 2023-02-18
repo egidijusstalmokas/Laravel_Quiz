@@ -17,7 +17,8 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        return view('admin.quiz.index');
+        $questions = Question::select('id', 'text')->get();
+        return view('admin.quiz.index', compact('questions'));
     }
 
     /**
