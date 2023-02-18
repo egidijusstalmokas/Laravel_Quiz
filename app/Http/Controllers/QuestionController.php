@@ -201,6 +201,10 @@ class QuestionController extends Controller
      */
     public function destroy(Question $question)
     {
-        //
+        $message = "Operation was created successful, question deleted";
+        Answer::where('question_id', '=', $question->id)->delete();
+        File::delete(public_path('/quiz/' . $question->image));
+        $question->delete();
+        return redirect()->route('question.index')->with('success', $message);
     }
 }

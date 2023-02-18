@@ -43,6 +43,7 @@ Route::controller(AdminController::class)
         Route::post('/store', 'store')->name('store');
         Route::get('edit/{question}', 'edit')->name('edit');
         Route::post('update/{question}', 'update')->name('update');
+        Route::get('/destroy/{question}', 'destroy')->name('destroy');
     });
     });
 

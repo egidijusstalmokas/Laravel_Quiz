@@ -8,8 +8,11 @@
             <div class="col-12">
                 <div class="card-m-white p-4 mb-5">
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-8">
                             <h4>Edit question</h4>
+                        </div>
+                        <div class="col-4">
+                            <button data-toggle="modal" data-target="#delete_question" class="btn main-button col-12">Delete question</button>
                         </div>
                     </div>
                     <div class="row mt-5">
@@ -80,6 +83,7 @@
             </div>
         </div>
     </div>
+    @include('admin.quiz.modals.delete')
 </main>           
 <!--Main-->
 <!--Footer-->
