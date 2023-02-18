@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\QuestionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,14 @@ Route::controller(AdminController::class)
         Route::get('/editImages', 'editImages')->name('editImages');
         Route::post('storeImages', 'storeImages')->name('storeImages');
         Route::get('/destroyImage/{quizImage}', 'destroyImage')->name('destroyImage');
+    });
+    Route::controller(QuestionController::class)->prefix('question')->name('question.')->group(function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::get('edit/{question}', 'edit')->name('edit');
+        Route::post('update/{question}', 'update')->name('update');
+        Route::get('/destroy/{question}', 'destroy')->name('destroy');
     });
     });
 
