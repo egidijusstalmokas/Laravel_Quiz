@@ -19,7 +19,7 @@
           <!-- Right -->
           <ul class="navbar-nav nav-flex-icons">
             <li class="nav-item mr-1">
-              <a href="https://n-web.lt/" class="nav-link border border-light rounded waves-effect"
+              <a href="https://github.com/egidijusstalmokas/Laravel_Quiz" class="nav-link border border-light rounded waves-effect"
                 target="_blank">
                 <i class="fa-solid fa-circle-info mr-2"></i>GitHub
               </a>
