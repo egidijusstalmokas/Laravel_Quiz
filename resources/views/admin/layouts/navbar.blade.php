@@ -24,7 +24,7 @@
                 <i class="fa-solid fa-circle-info mr-2"></i>GitHub
               </a>
             </li>
-             <li class="nav-item">
+            <li class="nav-item">
               <a data-toggle="modal" data-target="#userMenu" class="nav-link border border-light rounded waves-effect">
                 <i class="fas fa-user-alt p-1"></i>
               </a>
