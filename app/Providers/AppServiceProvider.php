@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
+use App\Models\Info;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +25,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        View::composer(['admin.layouts.left_menu', 'auth.login', 'auth.passwords.email', 'auth.passwords.reset'], function ($view) {
+            $logo = Info::select('type', 'value')->where('type', 'logo')->first();
+            $view->with(['logo' => $logo ]);
+        });
+
+        View::composer(['admin.layouts.navbar'], function ($view) {
+            $title = Info::select('type', 'value')->where('type', 'title')->first();
+            $view->with(['title' => $title ]);
+        });
     }
 }
