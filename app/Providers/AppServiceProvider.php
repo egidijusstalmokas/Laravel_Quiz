@@ -29,5 +29,10 @@ class AppServiceProvider extends ServiceProvider
             $logo = Info::select('type', 'value')->where('type', 'logo')->first();
             $view->with(['logo' => $logo ]);
         });
+
+        View::composer(['admin.layouts.navbar'], function ($view) {
+            $title = Info::select('type', 'value')->where('type', 'title')->first();
+            $view->with(['title' => $title ]);
+        });
     }
 }
