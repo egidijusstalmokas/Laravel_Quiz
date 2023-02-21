@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer(['admin.layouts.left_menu', 'auth.login', 'auth.passwords.email', 'auth.passwords.reset'], function ($view) {
+        View::composer(['admin.layouts.left_menu', 'auth.login', 'auth.passwords.email', 'auth.passwords.reset', 'front.layouts.navbar'], function ($view) {
             $logo = Info::select('type', 'value')->where('type', 'logo')->first();
             $view->with(['logo' => $logo ]);
         });
