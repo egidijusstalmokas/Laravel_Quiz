@@ -7,8 +7,9 @@
             <h1 class="navbar-bold-text text-uppercase"> Game - <br>quiz</h1>
         </div>
         <div class="col-2">
-            <button type="button" class="menu_button float-right" data-bs-toggle="modal" data-bs-target=""><img src="{{ asset('imgs/icons/menu.png') }}" alt=""></button>
+            <button type="button" class="menu_button float-right" data-toggle="modal" data-target="#menuModal"><img src="{{ asset('imgs/icons/menu.png') }}" alt=""></button>
         </div>
     </div>
+    @include('front.modals.menu_modal')
 </div>
 

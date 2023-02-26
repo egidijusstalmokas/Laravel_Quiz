@@ -18,7 +18,7 @@ use App\Http\Controllers\QuestionController;
 
 Route::get('/', function () {
     return view('front.quiz.index');
-});
+})->name('quiz');
 
 Auth::routes();
 
