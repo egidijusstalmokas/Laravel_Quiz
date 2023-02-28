@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\QuizController;
+use App\Http\Controllers\QuizQuestionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +19,8 @@ use App\Http\Controllers\QuestionController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('front.quiz.index');
+})->name('quiz');
 
 Auth::routes();
 
@@ -47,4 +49,11 @@ Route::controller(AdminController::class)
     });
     });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::controller(QuizController::class)->prefix('quiz')->name('quiz.')->group(function () {
+        Route::get('/play', 'play')->name('play');
+    });
+    Route::controller(QuizQuestionsController::class)->prefix('quizQuestion')->name('quizQuestion.')->group(function () {
+        Route::get('/', 'question')->name('question'); 
+        Route::get('/nextQuestion/{quizQuestion}/{questionNumber}/{value}', 'nextQuestion')->name('nextQuestion');
+        Route::get('/resultQuestion/{quizQuestion}/{questionNumber}/{value}', 'resultQuestion')->name('resultQuestion');
+    });
