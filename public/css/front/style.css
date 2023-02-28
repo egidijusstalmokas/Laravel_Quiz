@@ -2,6 +2,10 @@ body {
     background-color: #F5F5F5;
     overflow-x: hidden !important;
 }
+
+button {
+    cursor: pointer !important;
+}
 /* 
 ::-webkit-scrollbar {
     border-right: solid 12px transparent;

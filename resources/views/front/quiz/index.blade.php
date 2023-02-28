@@ -33,7 +33,7 @@
             </div>
             <div class="row mt-5 pt-4">
                 <div class="col-12 text-center mb-4">
-                    <a href=""><button class="black-button">
+                    <a href="{{ route('quiz.play') }}"><button class="black-button">
                         <img class="mr-3" src="{{ asset('imgs/icons/play.png') }}" alt="">
                         Start the quiz
                     </button></a>

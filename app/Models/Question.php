@@ -23,4 +23,15 @@ class Question extends Model
     {
         return $this->hasMany(Answer::class);
     }
+
+    public function quizQuestions()
+    {
+        return $this->hasMany(QuizQuestions::class);
+    }
+
+    public static function getQuestions()
+    {
+        $quizResultGet = QuizQuestions::orderBy('id', 'desc')->take(10)->pluck('question_id')->toArray();
+        return Question::whereNotIn('id', $quizResultGet)->get()->random(10);
+    }
 }
