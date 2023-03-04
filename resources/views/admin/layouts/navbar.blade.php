@@ -6,7 +6,7 @@
             <span class="navbar-toggler-icon "></span>
         </a>
         <a class="xl-show navbar-brand waves-effect" href="" target="_blank">
-          <strong style="color:#71A894;">{{ $title->value }}</strong>
+          <strong style="color:#363534;">{{ $title->value }}</strong>
         </a>
          <a class="lg-show mr-3 border border-light rounded" data-toggle="modal" data-target="">
             <span class="fas fa-user-alt p-3"></span>

@@ -39,13 +39,13 @@ html {
   
   /*background color #007bff*/
   .bg_deep_blue {
-    background-color: #548170 !important;
+    background-color: #363534 !important;
   }
   
   /*btn deep blue*/
   .btn-deep_blue {
       color: #fff;
-      background-color: #548170 !important
+      background-color: #363534 !important
   }
   
   .btn-deep_blue:hover {
@@ -66,7 +66,7 @@ html {
   }
   
   .btn-deep_blue.dropdown-toggle {
-      background-color: #548170 !important
+      background-color: #363534 !important
   }
   
   .btn-deep_blue.dropdown-toggle:hover,
@@ -96,9 +96,9 @@ html {
   /*btn outline deep_blue*/
   
   .btn-outline-deep_blue {
-      color: #548170!important;
+      color: #363534!important;
       background-color: transparent !important;
-      border: 2px solid #548170!important
+      border: 2px solid #363534!important
   }
   
   .btn-outline-deep_blue:hover,
@@ -106,16 +106,16 @@ html {
   .btn-outline-deep_blue:active,
   .btn-outline-deep_blue:active:focus,
   .btn-outline-deep_blue.active {
-      color: #548170!important;
+      color: #363534!important;
       background-color: transparent !important;
-      border-color: #548170!important
+      border-color: #363534!important
   }
   
   .btn-outline-deep_blue:not([disabled]):not(.disabled):active,
   .btn-outline-deep_blue:not([disabled]):not(.disabled).active,
   .show>.btn-outline-deep_blue.dropdown-toggle {
       background-color: transparent !important;
-      border-color: #548170!important;
+      border-color: #363534!important;
       -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
       box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15)
   }
@@ -162,7 +162,7 @@ html {
   }
   
   .deep-blue {
-      color: #548170 !important;;
+      color: #363534 !important;;
   }
   
   .not-active {
@@ -778,11 +778,11 @@ html {
   }
   
   .acent-dark-green-color {
-      color: #548170;
+      color: #363534;
   }
   
   .m-main-green {
-      color: #71A894;
+      color: #363534;
   }
   
   .m-greenish {
@@ -813,10 +813,10 @@ html {
   
   .main-button {
       border: none;
-      background-color: #548170;
+      background-color: #363534;
       padding: 8px 25px 8px 25px;
       color: #fff;
-      border: 2px solid #548170;
+      border: 2px solid #363534;
       transition: 0.3s;
   }
   
@@ -824,16 +824,16 @@ html {
       border: none;
       background-color: #fff;
       padding: 8px 25px 8px 25px;
-      color: #548170;
-      border: 2px solid #548170;
+      color: #363534;
+      border: 2px solid #363534;
   }
   
   .green-button {
       border: none;
-      background-color: #548170;
+      background-color: #363534;
       padding: 8px 25px 8px 25px;
       color: #fff;
-      border: 2px solid #548170;
+      border: 2px solid #363534;
       transition: 0.3s;
   }
   

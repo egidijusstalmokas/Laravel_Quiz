@@ -23,7 +23,7 @@
                         @foreach($quizImages as $quizImage)
                         <div class="col-3">
                             <img style="object-fit: cover; height:75%; width:100%; border:1px solid grey;" class="mr-1 mb-1" src="{{ asset('quiz/random') }}/{{ $quizImage->img }}" alt="">
-                            <a class="d-block" href="{{ route('settings.destroyImage', $quizImage) }}">Pašalinti</a>
+                            <a class="d-block" href="{{ route('settings.destroyImage', $quizImage) }}">Remove</a>
                         </div>
                         @endforeach
                     </div>
